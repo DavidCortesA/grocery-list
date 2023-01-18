@@ -1,0 +1,125 @@
+@primary-color: #f08080;
+@secundary-color: #ffdab9;
+@terciary-color: #f8ad9d;
+@white: #eae7ca;
+@black: #1c1c1c;
+
+.font(@size:36px,@family:sans-serif,@color:@secundary-color) {
+  font-size: @size;
+  font-family: @family;
+  color: @color;
+}
+
+.dFlex(@justC:center,@alignI:center,@gap:0) {
+  display: flex;
+  justify-content: @justC;
+  align-items: @alignI;
+  gap: @gap;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  text-align: center;
+  background-color: @primary-color;
+  .font();
+  .dFlex();
+  &-container {
+    background-color: @terciary-color;
+    width: 500px;
+    height: min-content;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 10px 10px 26px 0px rgba(0, 0, 0, 0.35);
+  }
+  &-item__box {
+    background-color: @primary-color;
+    color: @terciary-color;
+    margin: 1em 0;
+    border-radius: 10px;
+    padding: 5px;
+    .dFlex(@alignI:center);
+    svg {
+      margin: 5px;
+    }
+  }
+  &-item__input {
+    border: none;
+    background: transparent;
+    color: @white;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    &::placeholder {
+      color: @white;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+  &-item {
+    &__list {
+      .dFlex(@alignI:stretch);
+      flex-direction: column;
+      &-container {
+        .dFlex(space-between, center);
+        padding: 20px 0;
+        border-bottom: 2px solid @primary-color;
+      }
+      &-name {
+        cursor: pointer;
+        .dFlex(center, center);
+        .font(26px);
+        svg {
+          margin: 0 5px;
+        }
+      }
+      &-container {
+        .quantity {
+          border: 1px solid @secundary-color;
+          background: @white;
+          border-radius: 50px;
+          min-width: 70px;
+          .dFlex(space-between,center);
+          .font(12px, @color:@primary-color);
+        }
+        .completed {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 10px;
+  .dFlex(space-between, center);
+  .font(22px);
+  .delete {
+    .dFlex(@gap:5px);
+    cursor: pointer;
+  }
+  h4 {
+    text-align: center;
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+  margin: 3px;
+  color: @terciary-color;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
