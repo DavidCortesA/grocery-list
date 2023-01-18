@@ -133,6 +133,7 @@ export default function App() {
           </footer>
         )}
       </div>
+      <p className="made">Made by David Cortez</p>
     </div>
   );
 }

@@ -30,7 +30,8 @@
   text-align: center;
   background-color: @primary-color;
   .font();
-  .dFlex();
+  .dFlex(@justC:space-around);
+  flex-direction: column;
   &-container {
     background-color: @terciary-color;
     width: 500px;
@@ -122,4 +123,9 @@ button {
   &:hover {
     cursor: pointer;
   }
+}
+
+.made {
+  .font(15px);
+  font-weight: bold;
 }
