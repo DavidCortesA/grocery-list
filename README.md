@@ -15,6 +15,9 @@ I hope that this project can be of help to others ♥👌
 - LESS
 - JAVASCRIPT
 - REACT
+- WEBPACK
+- BABEL
+- ESLINT
 
 
 Made by David Cortez 😎
